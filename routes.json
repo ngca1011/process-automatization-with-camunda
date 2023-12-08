@@ -1,0 +1,4 @@
+{
+    "/candidates?id=:id": "/candidates/:id",
+    "/employees?id=:id": "/employees/:id"
+}

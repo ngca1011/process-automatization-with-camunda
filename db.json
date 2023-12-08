@@ -1,0 +1,90 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "prename": "Callie",
+      "surname": "Oliver",
+      "departement": "Sales",
+      "role": "Team Lead",
+      "salary": 100000
+    },
+    {
+      "id": 2,
+      "prename": "Colleen",
+      "surname": "Alford",
+      "departement": "Sales",
+      "role": "Expert",
+      "salary": 60000
+    },
+    {
+      "id": 3,
+      "prename": "Keefe",
+      "surname": "Williams",
+      "departement": "Sales",
+      "role": "QS",
+      "salary": 600000
+    },
+    {
+      "id": 4,
+      "prename": "Elmo",
+      "surname": "Garza",
+      "departement": "R&D",
+      "role": "Team Lead",
+      "salary": 120000
+    },
+    {
+      "id": 5,
+      "prename": "Dennis",
+      "surname": "Holloway",
+      "departement": "Sales",
+      "role": "Engineer",
+      "salary": 100000
+    },
+    {
+      "id": 6,
+      "prename": "Noel",
+      "surname": "Reyes",
+      "departement": "Sales",
+      "role": "Engineer",
+      "salary": 700000
+    },
+    {
+      "id": 7,
+      "prename": "Fatima",
+      "surname": "Diaz",
+      "departement": "Sales",
+      "role": "Senior Consultant",
+      "salary": 90000
+    }
+  ],
+  "candidates": [
+    {
+      "id": 1,
+      "prename": "Carl",
+      "surname": "Mayor",
+      "birthdate": 19790911,
+      "desired_salary": 75000
+    },
+    {
+      "id": 2,
+      "prename": "Peter",
+      "surname": "Mint",
+      "birthdate": 19940517,
+      "desired_salary": 80000
+    },
+    {
+      "id": 3,
+      "prename": "Clara",
+      "surname": "Meyer",
+      "birthdate": 19901221,
+      "desired_salary": 65000
+    },
+    {
+      "id": 4,
+      "prename": "Cathrin",
+      "surname": "Diaz",
+      "birthdate": 20010303,
+      "desired_salary": 100000
+    }
+  ]
+}
