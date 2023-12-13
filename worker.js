@@ -1,6 +1,5 @@
 const ZB = require('zeebe-node')
 const dotenv = require('dotenv')
-const fs = require('fs')
 
 dotenv.config()
 
@@ -11,12 +10,14 @@ const zeebeClient = new ZB.ZBClient();
 zeebeClient.createWorker({
     taskType: 'absage_senden', 
     taskHandler: async job => {
+      const kandidat_id = job.variables.kandidat_id;
       try {
         await zeebeClient.publishMessage({
-          correlationKey: 12345, 
+          correlationKey: kandidat_id, 
           messageId: 'Event_0r3miz9', 
           name: 'absage_bekommen', 
           variables: {
+            kandidat_id: kandidat_id,
           },
         });
   
@@ -26,18 +27,20 @@ zeebeClient.createWorker({
         job.error('Error occurred while starting Kandidat process:', error);
       }
     },
-  });
+});
 
 // Worker to handle "Vertrag zusenden" task
 zeebeClient.createWorker({
   taskType: 'vertrag_zusenden', 
   taskHandler: async job => {
+    const kandidat_id = job.variables.kandidat_id;
     try {
       await zeebeClient.publishMessage({
-        correlationKey: 1234567, 
+        correlationKey: kandidat_id, 
         messageId: 'Event_00mr2uy', 
         name: 'vertrag_bekommen', 
         variables: {
+          kandidat_id: kandidat_id,
         },
       });
 
@@ -54,9 +57,10 @@ zeebeClient.createWorker({
     taskType: 'kandidat_antwort_schicken', 
     taskHandler: async job => {
       const kandidat_nachricht = job.variables.kandidat_nachricht;
+      const kandidat_id = job.variables.kandidat_id;
       try {
         await zeebeClient.publishMessage({
-          correlationKey: 12345678, 
+          correlationKey: kandidat_id, 
           messageId: 'Activity_0sslwo9', 
           name: 'nachricht_von_kandidat_bekommen', 
           variables: {
@@ -70,7 +74,7 @@ zeebeClient.createWorker({
         job.error('Error occurred while starting Kandidat process:', error);
       }
     },
-  });
+});
 
 
 
